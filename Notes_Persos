@@ -1,0 +1,12 @@
+Composer est à PHP ce que NPM est à javascript.
+Des gestionnaires de paquets
+
+NestJS est l'équivalent javascript de symfony
+
+
+Dans le dossier style et le fichier app.scss on peut modifier les couleurs de bootstrap.
+exemple: $danger: purple /$danger devient violet à la place de rouge
+
+!faire npm run dev applique les changement à toute les variables!
+
+npm run watch ça permet d'éviter de faire npm run dev à chaque fois
