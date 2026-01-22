@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Girassol&family=Permanent+Marker&family=Share+Tech&display=swap" rel="stylesheet">
 
 </head>
-<body class="bg-primary">
+<body class="body-visitor">
         {# Navbar #}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -67,8 +67,12 @@
   </div>
 </nav>
         {# Main #}
-        <h1>{% block h1 %}Je suis intrus{% endblock %}</h1>
-
+        <main>
+        {% block main %}{% endblock %}
+        </main>
         {# Footer #}
+       <footer class="text-center">
+       <p>Czsujfzien</p>
+       </footer>
 </body>
 </html>
