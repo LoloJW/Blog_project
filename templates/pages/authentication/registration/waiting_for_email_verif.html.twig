@@ -1,0 +1,41 @@
+{% extends "themes/base-visitor.html.twig" %}
+
+{% block title %}Validation de votre email | Kouizine{% endblock %}
+
+{% block description %}
+Confirmez votre adresse email pour finaliser votre inscription sur Kouizine et accéder à toutes les recettes.
+{% endblock %}
+
+{% block keywords %}
+Kouizine,validation email,confirmation inscription,cuisine,blog
+{% endblock %}
+
+{% block main %}
+    <div class="container my-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-4">🍽️ Presque terminé !</h1>
+
+            <p class="lead">
+                Merci pour votre inscription sur <strong>Kouizine</strong> 🎉
+            </p>
+
+            <p>
+                Un email de confirmation vient de vous être envoyé.<br>
+                Cliquez sur le lien contenu dans cet email pour activer votre compte.
+            </p>
+
+            <p class="text-muted mt-3">
+                Pensez à vérifier votre dossier <strong>spam</strong> ou <strong>courrier indésirable</strong>
+                si vous ne voyez rien d’ici quelques minutes.
+            </p>
+
+            <hr class="my-4">
+
+            <p class="small text-muted">
+                Vous n’avez rien reçu ?
+                <a href="#">Renvoyer l’email de confirmation</a>
+            </p>
+        </div>
+    </div>
+    {# {{ path('resend_validation_email') }} #}
+{% endblock %}
