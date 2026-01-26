@@ -1,0 +1,240 @@
+{# <!DOCTYPE html>
+
+<title>Register</title>
+
+
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1>Register</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.firstName) }}
+        {{ form_row(registrationForm.lastName) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.password.first, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.password.second, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">S'inscrire</button>
+    {{ form_end(registrationForm) }} #}
+
+
+{# Travail perso #}
+    {# <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>inscription</title>
+        {% block stylesheets %}
+            {{encore_entry_link_tags('app')}}
+        {% endblock %}
+        
+        {% block javascripts %}
+            {{encore_entry_script_tags('app')}}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row align-item-center">
+
+                <div class="col"><img class="img-fluid" src="./images/static/chicken.png" alt="Chicken"></div>
+                <div class="col">
+                        <div class="mt-3">
+                            <h1 class="d-flex justify-content-center">Inscription</h1>
+                            {{form_start(registrationForm)}}
+                                    
+                            <div class="row">
+                                    <div class="col-lg-6">
+                                        <label for="registration_form_firstName">Prénom <span class="text-danger">*</span></label>
+                                        {{form_widget(registrationForm.firstName, {'attr':{'class':'form-control'}})}}
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="registration_form_lastName">Nom <span class="text-danger">*</span></label>
+                                        {{form_widget(registrationForm.lastName, {'attr':{'class':'form-control'}})}}
+                                    </div>
+                            </div>    
+                            <div class="">
+                                   <label for="registration_form_email">Email <span class="text-danger">*</span></label>
+                                   {{form_widget(registrationForm.email, {'attr':{'class':'form-control'}})}}
+                            </div>
+                            <div class="">
+                                   <label for="registration_form_password_first">Password <span class="text-danger">*</span></label>
+                                   {{form_widget(registrationForm.password.first, {'attr':{'class':'form-control'}})}}
+                            </div>
+                            <div class="">
+                                   <label for="registration_form_password_second">Confirm password <span class="text-danger">*</span></label>
+                                   {{form_widget(registrationForm.password.second, {'attr':{'class':'form-control'}})}}
+                            </div>
+                            <div class="">
+                                   <label for="registration_form_agreeTerms">Lire et accepter les conditions d'utilisations</label>
+                                   {{form_widget(registrationForm.agreeTerms)}}
+                            </div>
+                        </div>
+                </div>  
+                
+            </div>
+        </div>
+       
+        
+    </body>
+    </html> #}
+
+
+    <!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription | Médecine du Monde - Blog santé du Dr Jean Dupont</title>
+
+        {# Seo #}
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="Inscrivez-vous au blog Médecine du Monde pour accéder à des contenus santé fiables, suivre les nouveaux articles médicaux et participer aux échanges autour de la prévention et du bien-être.">
+        <meta name="keywords" content="inscription blog santé, compte utilisateur santé, blog médical inscription, médecine du monde inscription">
+        <meta name="author" content="Dwwm22">
+        <meta name="publisher" content="Dwwm22">
+
+        {# Webpack Encore #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+        {# Favicon #}
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        {# Google Font #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">        
+    </head>
+    <body>
+        <main class="">
+            <div class="container bg-primary">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="/images/static/chicken.png" alt="Friday fry day ! ">
+                    </div>
+                    <div class="col-lg-5">
+                        <h1 class="text-center my-3">Inscription</h1>
+                        {% for flash_error in app.flashes('verify_email_error') %}
+                            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                        {% endfor %}
+                        {{form_start(registrationForm)}}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="registration_form_firstName">Prénom <span class="text-danger">*</span></label>
+                                        <div class="text-danger">{{form_errors(registrationForm.firstName)}}</div>
+                                        {{form_widget(registrationForm.firstName, {'attr': {'class':'form-control', 'autofocus':'autofocus'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="registration_form_lastName">Nom <span class="text-danger">*</span></label>
+                                         <div class="text-danger">{{form_errors(registrationForm.lastName)}}</div>
+                                        {{form_widget(registrationForm.lastName, {'attr': {'class':'form-control'}})}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registration_form_email">Email <span class="text-danger">*</span></label>
+                                <div class="text-danger">{{form_errors(registrationForm.email)}}
+                                {{form_widget(registrationForm.email, {'attr': {'class':'form-control'}})}}
+                            </div>
+                            <div class="mb-3">
+                                <label for="registration_form_password_first">Mot de passe <span class="text-danger">*</span></label>
+                                {{form_widget(registrationForm.password.first, {'attr': {'class':'form-control', 'placeholder': 'Au moins 12 caractères'}})}}
+                                <div class="text-danger">{{form_errors(registrationForm.password.first)}}
+                                <small>Au moins une lettre minuscule, majuscule, un chiffre et un caractère spécial.</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registration_form_password_second">Confirmation du mot de passe <span class="text-danger">*</span></label>
+                                {{form_widget(registrationForm.password.second, {'attr': {'class':'form-control'}})}}
+                                <div class="text-danger">{{form_errors(registrationForm.password.second)}}
+                            </div>
+                            <div class="mb-3">
+                                {{form_widget(registrationForm.agreeTerms)}} 
+                                <label for="registration_form_agreeTerms">
+                                    Lire et accepter <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">les conditions générales d'utilisation</a>
+                                </label>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title fs-5" id="staticBackdropLabel">Les conditions générales d'utilisations</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ex mollitia illo suscipit consequuntur omnis accusamus nemo nulla nam quasi porro, accusantium ratione, eius quos, quaerat magni expedita? Ipsam, error?
+                                        Cum vero quisquam veritatis accusamus officia eveniet. Corrupti quam vel, nihil ipsam, rem iste accusantium numquam alias hic esse quos aliquid pariatur a mollitia dolorum et. Quam praesentium consequatur delectus!
+                                        Consequatur sapiente deserunt placeat quae ipsum rem perferendis sit expedita, odit mollitia velit maxime blanditiis beatae minima! At obcaecati sunt, cumque vitae incidunt aliquam corrupti molestiae nemo quam asperiores est?
+                                        Minus neque culpa accusamus repellat iste saepe cupiditate soluta! Rerum, tempore ducimus suscipit dicta recusandae soluta ad eligendi iure dolorum quis! Eligendi fugit odio labore cum porro quidem amet veritatis?
+                                        Ipsum similique facere quod aut laborum praesentium impedit optio unde, ex nulla maxime dolores hic? Officiis exercitationem soluta necessitatibus vero aperiam, quidem praesentium recusandae illum temporibus perspiciatis nemo et adipisci?
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ex mollitia illo suscipit consequuntur omnis accusamus nemo nulla nam quasi porro, accusantium ratione, eius quos, quaerat magni expedita? Ipsam, error?
+                                        Cum vero quisquam veritatis accusamus officia eveniet. Corrupti quam vel, nihil ipsam, rem iste accusantium numquam alias hic esse quos aliquid pariatur a mollitia dolorum et. Quam praesentium consequatur delectus!
+                                        Consequatur sapiente deserunt placeat quae ipsum rem perferendis sit expedita, odit mollitia velit maxime blanditiis beatae minima! At obcaecati sunt, cumque vitae incidunt aliquam corrupti molestiae nemo quam asperiores est?
+                                        Minus neque culpa accusamus repellat iste saepe cupiditate soluta! Rerum, tempore ducimus suscipit dicta recusandae soluta ad eligendi iure dolorum quis! Eligendi fugit odio labore cum porro quidem amet veritatis?
+                                        Ipsum similique facere quod aut laborum praesentium impedit optio unde, ex nulla maxime dolores hic? Officiis exercitationem soluta necessitatibus vero aperiam, quidem praesentium recusandae illum temporibus perspiciatis nemo et adipisci?
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ex mollitia illo suscipit consequuntur omnis accusamus nemo nulla nam quasi porro, accusantium ratione, eius quos, quaerat magni expedita? Ipsam, error?
+                                        Cum vero quisquam veritatis accusamus officia eveniet. Corrupti quam vel, nihil ipsam, rem iste accusantium numquam alias hic esse quos aliquid pariatur a mollitia dolorum et. Quam praesentium consequatur delectus!
+                                        Consequatur sapiente deserunt placeat quae ipsum rem perferendis sit expedita, odit mollitia velit maxime blanditiis beatae minima! At obcaecati sunt, cumque vitae incidunt aliquam corrupti molestiae nemo quam asperiores est?
+                                        Minus neque culpa accusamus repellat iste saepe cupiditate soluta! Rerum, tempore ducimus suscipit dicta recusandae soluta ad eligendi iure dolorum quis! Eligendi fugit odio labore cum porro quidem amet veritatis?
+                                        Ipsum similique facere quod aut laborum praesentium impedit optio unde, ex nulla maxime dolores hic? Officiis exercitationem soluta necessitatibus vero aperiam, quidem praesentium recusandae illum temporibus perspiciatis nemo et adipisci?
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ex mollitia illo suscipit consequuntur omnis accusamus nemo nulla nam quasi porro, accusantium ratione, eius quos, quaerat magni expedita? Ipsam, error?
+                                        Cum vero quisquam veritatis accusamus officia eveniet. Corrupti quam vel, nihil ipsam, rem iste accusantium numquam alias hic esse quos aliquid pariatur a mollitia dolorum et. Quam praesentium consequatur delectus!
+                                        Consequatur sapiente deserunt placeat quae ipsum rem perferendis sit expedita, odit mollitia velit maxime blanditiis beatae minima! At obcaecati sunt, cumque vitae incidunt aliquam corrupti molestiae nemo quam asperiores est?
+                                        Minus neque culpa accusamus repellat iste saepe cupiditate soluta! Rerum, tempore ducimus suscipit dicta recusandae soluta ad eligendi iure dolorum quis! Eligendi fugit odio labore cum porro quidem amet veritatis?
+                                        Ipsum similique facere quod aut laborum praesentium impedit optio unde, ex nulla maxime dolores hic? Officiis exercitationem soluta necessitatibus vero aperiam, quidem praesentium recusandae illum temporibus perspiciatis nemo et adipisci?
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ex mollitia illo suscipit consequuntur omnis accusamus nemo nulla nam quasi porro, accusantium ratione, eius quos, quaerat magni expedita? Ipsam, error?
+                                        Cum vero quisquam veritatis accusamus officia eveniet. Corrupti quam vel, nihil ipsam, rem iste accusantium numquam alias hic esse quos aliquid pariatur a mollitia dolorum et. Quam praesentium consequatur delectus!
+                                        Consequatur sapiente deserunt placeat quae ipsum rem perferendis sit expedita, odit mollitia velit maxime blanditiis beatae minima! At obcaecati sunt, cumque vitae incidunt aliquam corrupti molestiae nemo quam asperiores est?
+                                        Minus neque culpa accusamus repellat iste saepe cupiditate soluta! Rerum, tempore ducimus suscipit dicta recusandae soluta ad eligendi iure dolorum quis! Eligendi fugit odio labore cum porro quidem amet veritatis?
+                                        Ipsum similique facere quod aut laborum praesentium impedit optio unde, ex nulla maxime dolores hic? Officiis exercitationem soluta necessitatibus vero aperiam, quidem praesentium recusandae illum temporibus perspiciatis nemo et adipisci?
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ex mollitia illo suscipit consequuntur omnis accusamus nemo nulla nam quasi porro, accusantium ratione, eius quos, quaerat magni expedita? Ipsam, error?
+                                        Cum vero quisquam veritatis accusamus officia eveniet. Corrupti quam vel, nihil ipsam, rem iste accusantium numquam alias hic esse quos aliquid pariatur a mollitia dolorum et. Quam praesentium consequatur delectus!
+                                        Consequatur sapiente deserunt placeat quae ipsum rem perferendis sit expedita, odit mollitia velit maxime blanditiis beatae minima! At obcaecati sunt, cumque vitae incidunt aliquam corrupti molestiae nemo quam asperiores est?
+                                        Minus neque culpa accusamus repellat iste saepe cupiditate soluta! Rerum, tempore ducimus suscipit dicta recusandae soluta ad eligendi iure dolorum quis! Eligendi fugit odio labore cum porro quidem amet veritatis?
+                                        Ipsum similique facere quod aut laborum praesentium impedit optio unde, ex nulla maxime dolores hic? Officiis exercitationem soluta necessitatibus vero aperiam, quidem praesentium recusandae illum temporibus perspiciatis nemo et adipisci?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Compris</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input formnovalidate type="submit" class="btn btn-primary w-100 shadow" value="S'inscrire">
+                            </div>
+                        {{form_end(registrationForm)}}
+
+                        <div class="d-flex flex-column justify-content-center align-items-center my-4">
+                            <p>Vous avez déjà un compte? <a href="">Connectez-vous</a></p>
+                            <p><a href="{{path('app_visitor_welcome')}}">Retour à l'accueil</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html> 

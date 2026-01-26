@@ -10,3 +10,10 @@ exemple: $danger: purple /$danger devient violet à la place de rouge
 !faire npm run dev applique les changement à toute les variables!
 
 npm run watch ça permet d'éviter de faire npm run dev à chaque fois
+
+
+Mailtrap permet de faire des faux mails pour faire des tests
+
+composer require symfonycasts/verify-email-bundle Un packet qui permet d'aider le console make:registration-form
+
+Respecter les conventions de la CNIL
