@@ -1,0 +1,31 @@
+{% extends 'themes/base-visitor.html.twig' %}
+
+{% block title %}Réinitialisez votre mot de passe{% endblock %}
+
+{% block description %}
+Réinitialisez votre mot de passe en toute sécurité. Cliquez sur le lien envoyé par email pour définir un nouveau mot de passe et accéder à votre compte.
+{% endblock %}
+
+{% block keywords %}
+réinitialisation mot de passe, mot de passe oublié, sécurité compte, récupération mot de passe, accès compte"
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md mx-auto">
+                <p>
+                    Si un compte correspondant à votre adresse e-mail, un message vient de vous être envoyé.
+                    Il contient un lien vous permettant de réinitialiser votre mot de passe.
+                </p>
+
+                <p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+                <p>
+                    Si vous ne recevez pas l'e-mail, veuillez vérifier votre dossier de courriers indésirables (spams)
+                    ou <a href="{{ path('app_forgot_password_request') }}">réessayer</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
