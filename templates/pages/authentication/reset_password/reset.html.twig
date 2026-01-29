@@ -2,7 +2,7 @@
 
 {% block title %}Reset your password{% endblock %}
 
-{% block body %}
+{% block main %}
     <h1>Resettez le mdp</h1>
 
     {{ form_start(resetForm) }}
@@ -13,7 +13,7 @@
     </div>
     <div class="mb-3">
             <label for="">Confirmez</label>
-            {{ form_widget(resetForm.plainPassword.first, {'attr': {'class':'form-control'}}) }}
+            {{ form_widget(resetForm.plainPassword.second, {'attr': {'class':'form-control'}}) }}
     </div>
     <div>
             <button class="btn btn-primary">Reset password</button>
