@@ -1,0 +1,24 @@
+{% extends 'themes/base-visitor.html.twig' %}
+
+{% block title %}Reset mdp{% endblock %}
+
+{% block main %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <div>
+    </div>
+    <h1>Reset ton mdp</h1>
+
+    {{ form_start(requestForm) }}
+    <label for="reset_password_request_form_email">L'email ICI</label>
+    {{ form_widget(requestForm.email)}}
+        <div>
+            <small>
+               Entre ton email et PEUT-ÊTRE qu'on t'aidera à en faire un nouveau.
+            </small>
+        </div>
+
+        <button class="btn btn-primary w-100 shadow">Envoyer la demande</button>
+    {{ form_end(requestForm) }}
+{% endblock %}
