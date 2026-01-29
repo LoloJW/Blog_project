@@ -47,10 +47,31 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
+        // ATTENTION les infos du users sont dans le token
 
-        // For example:
+        // Récupérons l'utilisateur
+        $user = $token->getUser();
+
+        /**
+         * Liste des rôles.
+         *
+         * @see
+         *  -ROLE_SUPER_ADMIN
+         *  -ROLE_ADMIN
+         *  -ROLE_USER
+         */
+        // Récupérons ses roles
+        $rolesUser = $user->getRoles();
+
+        // ROLE_SUPER_ADMIN, ROLE_ADMIN, ROLE_USER
+
+        if (in_array('ROLE_ADMIN', $rolesUser)) { // alors redirigeons-le vers la route menant à l'espace d'administration.
+            return new RedirectResponse($this->urlGenerator->generate('app_admin_home'));
+        }
+
+        // Dans le cas contraire, ce qui veut dire que c'est un simple utilisateur (ROLE_USER),
+        // Redirigeons-le vers la route menant à l'espace d'administration.
         return new RedirectResponse($this->urlGenerator->generate('app_visitor_welcome'));
-        // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl(Request $request): string
