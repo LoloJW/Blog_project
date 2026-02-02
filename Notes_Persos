@@ -17,3 +17,18 @@ Mailtrap permet de faire des faux mails pour faire des tests
 composer require symfonycasts/verify-email-bundle Un packet qui permet d'aider le console make:registration-form
 
 Respecter les conventions de la CNIL
+
+Aller dans Kernel.php pour changer le fuseau horaire
+
+class Kernel extends BaseKernel
+{
+    use MicroKernelTrait;
+    use TimeZoneTrait; <------ On appelle le trait (et pas la classe)
+
+    public function __construct(string $environment, bool $debug)
+    {
+        $this->changeTimeZone($_ENV['APP_TIME_ZONE']);  <----- Ceci
+
+        return parent::__construct($environment, $debug);
+    }
+}
