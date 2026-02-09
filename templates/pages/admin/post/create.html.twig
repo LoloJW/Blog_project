@@ -1,0 +1,52 @@
+{% extends "themes/base_admin.html.twig" %}
+
+{% block title %}Nouvelle article{% endblock %}
+
+{% block description %}Consulter la liste des articles{% endblock %}
+
+{# Jquery #}
+{% block j_query %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{# dataTables #}
+{% block data_tables %}
+
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.css" rel="stylesheet" integrity="sha384-MnxpJFHU9dTMYXshJqBDA0d93sG4KKAFEEzynAaDqcPP7BYh11O5HxbJ6iLDWOXS" crossorigin="anonymous">
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.js" integrity="sha384-7rAjATpiK3MtvKnoDf5WQz4O8W+3kpl4Jm82apgJgNkeUmZ59yjJT6LqlJpYqhVK" crossorigin="anonymous"></script>
+
+    <script>
+    $(document).ready( function () {
+        $('#myTable').DataTable({language: {
+            url: '//cdn.datatables.net/plug-ins/2.3.7/i18n/fr-FR.json',
+        }});
+    } );
+    </script>
+{% endblock %}
+
+
+{% block keywords %}Ajouter,article,post{% endblock %}
+
+{% block main %}
+    <h1 class="text-center my-3 display-5">Nouvel article</h1>
+
+    {% include "components/alert.html.twig" %}
+
+       <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+             {#   {{ form_start(categoryForm) }}
+                    <div class="mb-3">
+                        <label for="category_form_name">Nom: </label>
+                        {{form_widget(categoryForm.name, {'attr': {'class':'form-control', 'autofocus':'autofocus'}})}}
+                    </div>
+                    <div class="text-warning">
+                        {{form_errors(categoryForm.name)}}
+                    </div>
+                    <div>
+                        <input formnovalidate type="submit" class="btn btn-primary shadow" value="Ajouter">
+                    </div>
+                {{ form_end(categoryForm) }} #}
+
+
+{% endblock %}
