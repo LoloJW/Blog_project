@@ -3,12 +3,9 @@
 namespace App\Trait;
 
 trait TimeZoneTrait
-{   
+{
     /**
-     * Permet de changer le fuseau horaire de l'application
-     *
-     * @param string $timeZoneId
-     * @return void
+     * Permet de changer le fuseau horaire de l'application.
      */
     protected function changeTimeZone(string $timeZoneId): void
     {
