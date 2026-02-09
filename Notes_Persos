@@ -32,3 +32,8 @@ class Kernel extends BaseKernel
         return parent::__construct($environment, $debug);
     }
 }
+
+Comment créer un formulaire on a besoin du type de formulaire , console make:form, personalisé le formulaire , (voir CategoryFormType et Category et CategoryController)
+On ne valide pas les infos ne provenant pas du formulaire comme slug createdAt ou updatedAt
+
+Doctrine extensions
