@@ -64,14 +64,13 @@ class Post
 
     #[Assert\File(
         maxSize: '4M',
-        extensions: ['png', 'jpg', 'jpeg'],
+        extensions: ['png', 'jpg', 'jpeg', 'webp'],
         maxSizeMessage: 'Votre fichier est trop gras ({{ size }} {{ suffix }} la belle bête), pas plus gros que ça {{ limit }} {{ suffix }} pour passer.',
         extensionsMessage: 'Le format d\'image n\'est pas valide, seulement png, jepg, jpg et webp valides.',
     )]
     #[Vich\UploadableField(mapping: 'posts', fileNameProperty: 'image')]
     private ?File $imageFile = null;
 
-  
     #[ORM\Column(length: 255, nullable: true, unique: true)]
     private ?string $image = null;
 
