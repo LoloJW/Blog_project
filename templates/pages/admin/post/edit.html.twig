@@ -1,0 +1,103 @@
+{% extends "themes/base_admin.html.twig" %}
+
+{% block title %}modifier article{% endblock %}
+
+{% block description %}modifier l'article{% endblock %}
+
+{# Jquery #}
+{% block j_query %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{# dataTables #}
+{% block data_tables %}
+
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.css" rel="stylesheet" integrity="sha384-MnxpJFHU9dTMYXshJqBDA0d93sG4KKAFEEzynAaDqcPP7BYh11O5HxbJ6iLDWOXS" crossorigin="anonymous">
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.js" integrity="sha384-7rAjATpiK3MtvKnoDf5WQz4O8W+3kpl4Jm82apgJgNkeUmZ59yjJT6LqlJpYqhVK" crossorigin="anonymous"></script>
+
+    <script>
+    $(document).ready( function () {
+        $('#myTable').DataTable({language: {
+            url: '//cdn.datatables.net/plug-ins/2.3.7/i18n/fr-FR.json',
+        }});
+    } );
+    </script>
+{% endblock %}
+
+{% block tiny_mce %}
+<script src="https://cdn.tiny.cloud/1/f4wv8iqrb13oq19ligoxm1f81jdgpqp217km3291hn53dhr8/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+<script>
+  tinymce.init({
+    selector: 'textarea'
+  });
+</script>
+{% endblock %}
+
+
+{% block keywords %}modifier l'article{% endblock %}
+
+{% block main %}
+    <h1 class="text-center my-3 display-5">modifier article</h1>
+
+    {% include "components/alert.html.twig" %}
+
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-10 mx-auto bg-light shadow p-4">
+			{{ form_start(postForm) }}
+			<div class="mb-3">
+				<label for="post_form_title">Titre:
+				</label>
+				{{form_widget(postForm.title, {'attr': {'class':'form-control', 'autofocus':'autofocus'}})}}
+			</div>
+			<div class="text-warning">{{form_errors(postForm.title)}}</div>
+			<div class="mb-3">
+				<label for="post_form_category">Catégorie:
+				</label>
+				{{form_widget(postForm.category, {'attr': {'class':'form-control'}})}}
+			</div>
+			<div class="text-warning">{{form_errors(postForm.category)}}</div>
+			<div class="mb-3">
+				<label for="post_form_description">Description:
+				</label>
+				{{form_widget(postForm.description, {'attr': {'class':'form-control'}})}}
+			</div>
+			<div class="text-warning">{{form_errors(postForm.description)}}</div>
+			<div class="mb-3">
+				<label for="post_form_keywords">Mots clés:
+				</label>
+				{{form_widget(postForm.keywords, {'attr': {'class':'form-control'}})}}
+			</div>
+			<div class="text-warning">{{form_errors(postForm.keywords)}}</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					{% if post.image %}
+						<img src="{{ vich_uploader_asset(post,'imageFile') | imagine_filter('admin_post_thumb') }}" alt="{{ post.title }}">
+					{% else %}
+						<p class="">No Image</p>
+					{% endif %}
+				</div>
+				<div class="col-md-6">
+					<label for="post_form_imageFile">Image:
+					</label>
+					{{form_widget(postForm.imageFile, {'attr': {'class':'form-control'}})}}
+				</div>
+				<div class="text-warning">{{form_errors(postForm.imageFile)}}</div>
+			</div>
+
+			<div class="text-warning">{{form_errors(postForm.imageFile)}}</div>
+			<div class="mb-3">
+				<label for="post_form_content">Contenue:
+				</label>
+				{{form_widget(postForm.content, {'attr': {'class':'form-control', "rows":"10"}})}}
+			</div>
+			<div class="text-warning">{{form_errors(postForm.content)}}</div>
+			<div>
+				<input formnovalidate type="submit" class="btn btn-primary shadow" value="modifier">
+			</div>
+			{{ form_end(postForm) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

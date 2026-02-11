@@ -17,10 +17,16 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin')]
 final class CategoryController extends AbstractController
 {
+    public function __construct(
+        private readonly EntityManagerInterface $em,
+        private readonly CategoryRepository $CR,
+    ) {
+    }
+
     #[Route('/category/index', name: 'app_admin_category_index', methods: ['GET'])]
-    public function index(CategoryRepository $categoryRepository): Response
+    public function index(): Response
     {
-        $categories = $categoryRepository->findall();
+        $categories = $this->CR->findall();
 
         // dd($category);
 
@@ -30,7 +36,7 @@ final class CategoryController extends AbstractController
     }
 
     #[Route('/category/create', name: 'app_admin_category_create', methods: ['GET', 'POST'])]
-    public function create(Request $request, EntityManagerInterface $entityManager): Response
+    public function create(Request $request): Response
     {
         $category = new Category();
         $form = $this->createForm(CategoryFormType::class, $category);
@@ -40,8 +46,8 @@ final class CategoryController extends AbstractController
             $category->setCreatedAt(new \DateTimeImmutable());
             $category->setUpdatedAt(new \DateTimeImmutable());
 
-            $entityManager->persist($category);
-            $entityManager->flush();
+            $this->em->persist($category);
+            $this->em->flush();
 
             $this->addFlash('success', 'La catégorie a été créée');
 
@@ -52,15 +58,15 @@ final class CategoryController extends AbstractController
     }
 
     #[Route('/category/{id<\d+>}/edit', name: 'app_admin_category_edit', methods: ['POST', 'GET'])]
-    public function edit(Category $category, Request $req, EntityManagerInterface $em): Response
+    public function edit(Category $category, Request $req): Response
     {
         $form = $this->createForm(CategoryFormType::class, $category);
         $form->handleRequest($req);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $category->setUpdatedAt(new \DateTimeImmutable());
-            $em->persist($category);
-            $em->flush();
+            $this->em->persist($category);
+            $this->em->flush();
 
             $this->addFlash('success', 'La catégorie a été modifiée');
 
@@ -71,15 +77,20 @@ final class CategoryController extends AbstractController
             'categoryForm' => $form->createView(),
         ]);
     }
+
     #[Route('/category/{id<\d+>}/delete', name: 'app_admin_category_delete', methods: ['POST'])]
-    public function delete(Category $category, Request $req, EntityManagerInterface $em): Response
+    public function delete(Category $category, Request $req): Response
     {
         if ($this->isCsrfTokenValid("category-{$category->getId()}", $req->request->get('csrf_token'))) {
-            $em->remove($category);
-            $em->flush();
-
-            $this->addFlash("success","La catégorie a été supprimé");
+            if (0 == count($category->getPosts())) {
+                $this->addFlash('success', "La catégorie: {$category->getName()} a été supprimé");
+            } else {
+                $this->addFlash('success', "La catégorie: {$category->getName()} a été supprimé ainsi que les articles associés ");
+            }
+            $this->em->remove($category);
+            $this->em->flush();
         }
-        return $this->redirectToRoute("app_admin_category_index");
+
+        return $this->redirectToRoute('app_admin_category_index');
     }
 }

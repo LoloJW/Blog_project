@@ -25,6 +25,9 @@
 		{% block j_query %}{% endblock %}
 
 		{% block data_tables %}{% endblock %}
+
+		{% block tiny_mce %}{% endblock %}
+
 		{# Favicon #}
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -66,9 +69,9 @@
 				font-size: 0.75rem;
 			}
 
-		/*
-         Navbar
-        */
+			/*
+			Navbar
+			*/
 
 			.navbar-brand {
 				padding-top: 0.75rem;
@@ -207,7 +210,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
+									<a class="nav-link d-flex align-items-center gap-2 text-dark" href="{{path('app_admin_post_index')}}">
 										<i class="fa-solid fa-feather"></i>
 										Articles
 									</a>
