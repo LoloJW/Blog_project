@@ -5,9 +5,10 @@ namespace App\Entity;
 use App\Repository\PostRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Mapping\Attribute as Vich;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Attribute as Vich;
 
 #[Vich\Uploadable]
 #[ORM\Entity(repositoryClass: PostRepository::class)]
@@ -21,29 +22,56 @@ class Post
     #[ORM\ManyToOne(inversedBy: 'posts')]
     private ?User $user = null;
 
+    #[Assert\NotBlank(message: 'la catégorie est obligatoire')]
+    #[Assert\Type(
+        type: Category::class,
+        message: "la catégorie {{ value }} n'existe pas."
+    )]
     #[ORM\ManyToOne(inversedBy: 'posts')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
+    #[Assert\NotBlank(message: "Le message ne doit pas être vide espèce d'inconscient")]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères',
+    )]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Assert\NotBlank(message: "La description ne doit pas être vide espèce d'inconscient")]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'La description ne doit pas dépasser {{ limit }} caractères',
+    )]
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
+    #[Assert\NotBlank(message: "Les mots-clés ne doivent pas être vide espèce d'inconscient")]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'Les mots-clés ne doivent pas dépasser {{ limit }} caractères',
+    )]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $keywords = null;
 
+    #[Gedmo\Slug(fields: ['title'])]
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
     #[ORM\Column]
     private ?bool $isPublished = false;
 
-    // NOTE: This is not a mapped field of entity metadata, just a simple property.
+    #[Assert\File(
+        maxSize: '4M',
+        extensions: ['png', 'jpg', 'jpeg'],
+        maxSizeMessage: 'Votre fichier est trop gras ({{ size }} {{ suffix }} la belle bête), pas plus gros que ça {{ limit }} {{ suffix }} pour passer.',
+        extensionsMessage: 'Le format d\'image n\'est pas valide, seulement png, jepg, jpg et webp valides.',
+    )]
     #[Vich\UploadableField(mapping: 'posts', fileNameProperty: 'image')]
     private ?File $imageFile = null;
-    
+
+  
     #[ORM\Column(length: 255, nullable: true, unique: true)]
     private ?string $image = null;
 
@@ -172,6 +200,7 @@ class Post
     {
         return $this->imageFile;
     }
+
     public function getImage(): ?string
     {
         return $this->image;

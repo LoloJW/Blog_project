@@ -71,6 +71,7 @@ final class CategoryController extends AbstractController
             'categoryForm' => $form->createView(),
         ]);
     }
+
     #[Route('/category/{id<\d+>}/delete', name: 'app_admin_category_delete', methods: ['POST'])]
     public function delete(Category $category, Request $req, EntityManagerInterface $em): Response
     {
@@ -78,8 +79,9 @@ final class CategoryController extends AbstractController
             $em->remove($category);
             $em->flush();
 
-            $this->addFlash("success","La catégorie a été supprimé");
+            $this->addFlash('success', 'La catégorie a été supprimé');
         }
-        return $this->redirectToRoute("app_admin_category_index");
+
+        return $this->redirectToRoute('app_admin_category_index');
     }
 }
