@@ -123,7 +123,7 @@ final class PostController extends AbstractController
             return $this->redirectToRoute('app_admin_post_index');
         }
 
-        if (!$post->isPublished(true)) {
+        if (!$post->isPublished()) {
             $post->setPublishedAt(new \DateTimeImmutable());
             $post->setIsPublished(true);
             $this->addFlash('success', "l'article a été publié.");
