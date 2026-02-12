@@ -12,8 +12,8 @@
 {# dataTables #}
 {% block data_tables %}
 
-<link href="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.css" rel="stylesheet" integrity="sha384-MnxpJFHU9dTMYXshJqBDA0d93sG4KKAFEEzynAaDqcPP7BYh11O5HxbJ6iLDWOXS" crossorigin="anonymous">
-<script src="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.js" integrity="sha384-7rAjATpiK3MtvKnoDf5WQz4O8W+3kpl4Jm82apgJgNkeUmZ59yjJT6LqlJpYqhVK" crossorigin="anonymous"></script>
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.css" rel="stylesheet" integrity="sha384-MnxpJFHU9dTMYXshJqBDA0d93sG4KKAFEEzynAaDqcPP7BYh11O5HxbJ6iLDWOXS" crossorigin="anonymous">
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.3.7/datatables.min.js" integrity="sha384-7rAjATpiK3MtvKnoDf5WQz4O8W+3kpl4Jm82apgJgNkeUmZ59yjJT6LqlJpYqhVK" crossorigin="anonymous"></script>
 
 <script>
 $(document).ready( function () {
@@ -25,7 +25,9 @@ $(document).ready( function () {
 {% endblock %}
 
 
-{% block keywords %}Consultation, lecture, liste, catégories{% endblock %}
+{% block keywords %}
+    <meta name="keywords" content="Consultation, lecture, liste, tags">
+{% endblock %}
 
 {% block main %}
     <h1 class="text-center my-3 display-5">Liste des tags</h1>
@@ -56,9 +58,13 @@ $(document).ready( function () {
                         <td>{{tag.updatedAt|format_date()}}</td>
                         <td class="d-flex justify-content-center align-items-center gap-1">
                             <a href="{{path('app_admin_tag_edit', {'id':tag.id})}}" class="btn btn-sm btn-secondary"><i class="fa-solid fa-pen-to-square"></i>Modifier</a>
+                            
                             <form action="{{path('app_admin_tag_delete',{'id':tag.id})}}" method="post">
+
                              <input type="hidden" name="csrf_token" value="{{csrf_token('tag-'~tag.id)}}">
+
                              <button onclick="return confirm('Confirmer la supression du tag ?')" type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Supprimer</button>
+
                             </form>
                         </td>
                     </tr>

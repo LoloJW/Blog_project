@@ -2,9 +2,13 @@
 
 {% block title %}Consulter pour mieux régner sur la loi {{post.id}} {{post.title}}{% endblock %}
 
-{% block description %}consulter c'est la vie{% endblock %}
+{% block description %}{{post.description}}{% endblock %}
 
-{% block keywords %}regarde mon article trop cool{% endblock %}
+{% block keywords %}
+    {% if post.keywords %}
+        <meta name="keywords" content="{{post.keywords}}">  
+    {% endif %}
+{% endblock %}
 
 {% block main %}
 

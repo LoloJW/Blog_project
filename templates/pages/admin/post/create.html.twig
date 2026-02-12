@@ -4,10 +4,6 @@
 
 {% block description %}Consulter la liste des articles{% endblock %}
 
-{# Jquery #}
-{% block j_query %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-{% endblock %}
 
 {# dataTables #}
 {% block data_tables %}
@@ -25,16 +21,32 @@
 {% endblock %}
 
 {% block tiny_mce %}
-<script src="https://cdn.tiny.cloud/1/f4wv8iqrb13oq19ligoxm1f81jdgpqp217km3291hn53dhr8/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
-<script>
-  tinymce.init({
-    selector: 'textarea'
-  });
-</script>
+    <script src="https://cdn.tiny.cloud/1/f4wv8iqrb13oq19ligoxm1f81jdgpqp217km3291hn53dhr8/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+    <script>
+    tinymce.init({
+        selector: 'textarea'
+    });
+    </script>
 {% endblock %}
 
+{# Jquery #}
+{% block j_query %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
 
-{% block keywords %}Ajouter,article,post{% endblock %}
+{% block select2 %}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#post_form_tags").select2();
+    });
+    </script>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="ajouter, article">
+{% endblock %}
 
 {% block main %}
     <h1 class="text-center my-3 display-5">Nouvel article</h1>
@@ -55,6 +67,11 @@
                         {{form_widget(postForm.category, {'attr': {'class':'form-control'}})}}
                     </div>
                     <div class="text-warning">{{form_errors(postForm.category)}}</div>
+                    <div class="mb-3">
+                        <label for="post_form_tags">Tags: </label>
+                        {{form_widget(postForm.tags, {'attr': {'class':'form-control'}})}}
+                    </div>
+                    <div class="text-warning">{{form_errors(postForm.tags)}}</div>
                     <div class="mb-3">
                         <label for="post_form_description">Description: </label>
                         {{form_widget(postForm.description, {'attr': {'class':'form-control'}})}}
