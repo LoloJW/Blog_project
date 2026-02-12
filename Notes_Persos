@@ -37,3 +37,5 @@ Comment créer un formulaire on a besoin du type de formulaire , console make:fo
 On ne valide pas les infos ne provenant pas du formulaire comme slug createdAt ou updatedAt
 
 Doctrine extensions
+
+php bin/console debug:router permet de voir tout les chemins qu'on a crée
