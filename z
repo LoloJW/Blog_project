@@ -1,0 +1,281 @@
+[33mcommit b8e8539e02539d65a2ecde0bddf618a655c04087[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32msprint3-ticketE-feat/posts-and-tags-management[m[33m, [m[1;31morigin/sprint3-ticketD-feat/tags-management[m[33m, [m[1;32msprint3-ticketD-feat/tags-management[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Feb 12 11:19:13 2026 +0100
+
+    Fonction tag opérationnel
+
+[33mcommit 1ebae75733f179128e808091bc2975159f705313[m
+Merge: 8e60d84 65768b5
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Feb 11 14:53:43 2026 +0100
+
+    Merge pull request #16 from LoloJW/sprint3-ticketC-feat/posts-managment
+    
+    Sprint3 ticket c feat/posts managment
+
+[33mcommit 65768b5dc57ffa4d05199c682b371b8dfcbd672f[m[33m ([m[1;31morigin/sprint3-ticketC-feat/posts-managment[m[33m, [m[1;32msprint3-ticketC-feat/posts-managment[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Feb 11 14:51:46 2026 +0100
+
+    amélioration de la fonction publier, encore à travailler
+
+[33mcommit e8cf78918da2f38449ab47328fd4e45e2cc884a5[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Feb 11 11:01:56 2026 +0100
+
+    L'admin peut delete modifier tout les articles
+
+[33mcommit 2370efd68226da87092ea845e28cef6dba9ad81a[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Feb 9 17:02:00 2026 +0100
+
+    Création de la table Post
+
+[33mcommit 8e60d843821dedab6b8cb8a5418a045272ea5582[m
+Merge: 34bc539 e6d67c7
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Feb 9 14:00:32 2026 +0100
+
+    Merge pull request #15 from LoloJW/sprint3-ticketB-feat/categories-managment
+    
+    Sprint3 ticket b feat/categories managment
+
+[33mcommit e6d67c7b38756e33490241e7ccb217b9bcb609c0[m[33m ([m[1;31morigin/sprint3-ticketB-feat/categories-managment[m[33m, [m[1;32msprint3-ticketB-feat/categories-managment[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Feb 9 13:58:50 2026 +0100
+
+    L'admin peut consulter la liste des catégories et modifier chacunes d'elles
+
+[33mcommit c0b1a0cf03093d01c7738bafc9d21a288fb712ef[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Feb 9 12:11:20 2026 +0100
+
+    L'admin peut consulter la liste des catégories et modifier chacunes d'elles
+
+[33mcommit 34bc5391db490412e1dd17cdd186d7238802e76f[m
+Merge: e5bb9e8 d5755d1
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Feb 2 12:04:17 2026 +0100
+
+    Merge pull request #14 from LoloJW/sprint3-ticketA-add/backoffices
+    
+    Ajout de l'espace user et admin, création de la commande pour faire l…
+
+[33mcommit d5755d164cacf9d239e91773593dfeaf6ee756df[m[33m ([m[1;31morigin/sprint3-ticketA-add/backoffices[m[33m, [m[1;32msprint3-ticketA-add/backoffices[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Feb 2 12:02:44 2026 +0100
+
+    Ajout de l'espace user et admin, création de la commande pour faire le super admin en db
+
+[33mcommit e5bb9e8134a44e7f9f48d6ae859f4c88c8c9a7f9[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Feb 2 09:36:46 2026 +0100
+
+    Explication fuseau horaire
+
+[33mcommit 18dc1b0139938500bbd3d267700c072e18df6f87[m
+Merge: 7307bfd f158ff1
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 29 17:12:10 2026 +0100
+
+    Merge pull request #13 from LoloJW/sprint3-ticketA-add/backoffices
+    
+    Sprint3 ticket a add/backoffices
+
+[33mcommit f158ff12e2badf78e3180175a5ee35ad24d8d39d[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 29 17:05:02 2026 +0100
+
+    Aspaces administratis et utilitaires finis
+
+[33mcommit 816b4e0e228544f0e8be99d59be87c7146c6161e[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 29 16:12:46 2026 +0100
+
+    Création de la page admin et du compte super admin
+
+[33mcommit 7307bfd0d087dff28852578fcb392512136f0a5c[m
+Merge: e810fbe 8dab6ce
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 29 09:34:50 2026 +0100
+
+    Merge pull request #12 from LoloJW/sprint2-ticketD-feat/reset-password
+    
+    Sprint2 ticket d feat/reset password
+
+[33mcommit 8dab6ce26f06d426045975abc4532de844878001[m[33m ([m[1;31morigin/sprint2-ticketD-feat/reset-password[m[33m, [m[1;32msprint2-ticketD-feat/reset-password[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 29 09:33:52 2026 +0100
+
+    Peaufinage
+
+[33mcommit 56de8e11b18b5fe2a681c5462e2390d85519b31c[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 28 16:15:02 2026 +0100
+
+    Reset password, encore un find à corriger
+
+[33mcommit e810fbe1f97fffa85506603435bbbd2ba4d03714[m
+Merge: f89cb72 32d80b2
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 28 11:32:33 2026 +0100
+
+    Merge pull request #11 from LoloJW/sprint2-ticketC-feat/limiting-login-attemps
+    
+    git gud le nombre de tentative
+
+[33mcommit 32d80b2f83c1844fb0ce48d7f97978f375115301[m[33m ([m[1;31morigin/sprint2-ticketC-feat/limiting-login-attemps[m[33m, [m[1;32msprint2-ticketC-feat/limiting-login-attemps[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 28 11:29:13 2026 +0100
+
+    git gud le nombre de tentative
+
+[33mcommit f89cb7253777b08ad1f5ae25f9e19b37621fa95b[m
+Merge: 73e3b9f 2439cdd
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 28 10:31:57 2026 +0100
+
+    Merge pull request #10 from LoloJW/sprint2-ticketB-feat/login-system
+    
+    maj readme
+
+[33mcommit 2439cddc7386bd4845ebd20af237bf9e77247bd1[m[33m ([m[1;31morigin/sprint2-ticketB-feat/login-system[m[33m, [m[1;32msprint2-ticketB-feat/login-system[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 28 10:30:55 2026 +0100
+
+    maj readme
+
+[33mcommit 73e3b9f60965e4c863f44106bd85b67bf21cfc1a[m
+Merge: 01ae705 8cbaf10
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 27 16:06:21 2026 +0100
+
+    Merge pull request #9 from LoloJW/sprint2-ticketB-feat/login-system
+    
+    Page de connexion et inscription relié, mise à jour et fonctionnels
+
+[33mcommit 8cbaf1013b45b9c854c03f6cacf55a080194d00c[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 27 16:04:14 2026 +0100
+
+    Page de connexion et inscription relié, mise à jour et fonctionnels
+
+[33mcommit 01ae70559573323630af1c697a7d2e3b0a53058e[m
+Merge: f007ecf cd45606
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 27 09:26:31 2026 +0100
+
+    Merge pull request #8 from LoloJW/sprint2-tickatA-feat/registration-system
+    
+    ignor false error phpstan
+
+[33mcommit cd456061c0571cfe01621dfb4a7e444da0d69ec9[m[33m ([m[1;31morigin/sprint2-tickatA-feat/registration-system[m[33m, [m[1;32msprint2-tickatA-feat/registration-system[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 27 09:23:41 2026 +0100
+
+    ignor false error phpstan
+
+[33mcommit f007ecf5321a5398ee63a3ded6c64b41424ae6f1[m
+Merge: 5ee49c4 acf5e2f
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Jan 26 17:06:20 2026 +0100
+
+    Merge pull request #7 from LoloJW/sprint2-tickatA-feat/registration-system
+    
+    Enfer et formulaire
+
+[33mcommit acf5e2f0dd5ce88d0b49ab87d2b629ca8d731a4e[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Mon Jan 26 17:04:25 2026 +0100
+
+    Enfer et formulaire
+
+[33mcommit 5ee49c48d55d88a091fea5fb5ca1acb780b2b633[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 22 11:10:16 2026 +0100
+
+    Ajout des pages de la section visiteur
+
+[33mcommit 3f6979c44c087f129ad900a952a70e1255ba1e17[m[33m ([m[1;32msprint1-ticketE-add/visitor-pages[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 22 09:48:14 2026 +0100
+
+    test
+
+[33mcommit a0ec985a34a21c48f58735f65fb04e49765313ab[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Thu Jan 22 09:41:04 2026 +0100
+
+    Add: création des pages de la section visiteur
+
+[33mcommit c8ceeedb504d5d71b7bab3c8f66300d582904e30[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 21 17:02:09 2026 +0100
+
+    Add: création des pages de la section visiteur
+
+[33mcommit b02faca45b31d5b239ddc914ad56810f28a214f9[m
+Merge: 47af700 e5cc635
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 21 11:55:13 2026 +0100
+
+    Merge pull request #4 from LoloJW/sprint1-ticketD-add/webpackencore-sass-bootstrap
+    
+    Installation du sass bootstrap dans Symfony
+
+[33mcommit e5cc635ac2acd172848aa7cca3da6d3a0dc27079[m[33m ([m[1;31morigin/sprint1-ticketD-add/webpackencore-sass-bootstrap[m[33m, [m[1;32msprint1-ticketD-add/webpackencore-sass-bootstrap[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Wed Jan 21 11:07:25 2026 +0100
+
+    Installation du sass bootstrap dans Symfony
+
+[33mcommit 47af700954c3c5c959290292caadecce2c97ff7d[m
+Merge: 1d65a53 c12b9f6
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 20 16:12:24 2026 +0100
+
+    Merge pull request #3 from LoloJW/sprint1-ticketC-add/users-table
+    
+    add: Création de la table des utilisateurs
+
+[33mcommit c12b9f6da72fc5c45f1c358fd57f9f2a202d21ef[m[33m ([m[1;31morigin/sprint1-ticketC-add/users-table[m[33m, [m[1;32msprint1-ticketC-add/users-table[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 20 16:08:49 2026 +0100
+
+    add: Création de la table des utilisateurs
+
+[33mcommit 1d65a533dc6bdb98bf298cbcdcc798b14439cada[m
+Merge: bc9b6e6 287a1c3
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 20 14:37:19 2026 +0100
+
+    Merge pull request #2 from LoloJW/sprint1-ticketB-add/static-code-analyzers
+    
+    add: Analyseurs statiques du code
+
+[33mcommit 287a1c355b9d255f089c25955bb4ad469a5ae448[m[33m ([m[1;31morigin/sprint1-ticketB-add/static-code-analyzers[m[33m, [m[1;32msprint1-ticketB-add/static-code-analyzers[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 20 14:34:50 2026 +0100
+
+    add: Analyseurs statiques du code
+
+[33mcommit bc9b6e63240d035478ac61517fbee7fb5f2b48b0[m
+Merge: e9de97b b6388a0
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 20 12:36:43 2026 +0100
+
+    Merge pull request #1 from LoloJW/sprint1-ticketA-add/app-local-secret-key-command
+    
+    add: Création de la ccommande permettant de créer le fichoer .en.dev.local
+
+[33mcommit b6388a0f0dda6e30ee005c13950d0ad3c6ee55c9[m[33m ([m[1;31morigin/sprint1-ticketA-add/app-local-secret-key-command[m[33m, [m[1;32msprint1-ticketA-add/app-local-secret-key-command[m[33m)[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 20 12:26:21 2026 +0100
+
+    add: Création de la ccommande permettant de créer le fichoer .en.dev.local et d'y initaliser la clé secrète pour la variable APP_SECRET
+
+[33mcommit e9de97b3cb4ac02ac247ed92bf4e0944a66f8958[m
+Author: LoloJW <laurentsaint-georges@live.fr>
+Date:   Tue Jan 20 11:00:40 2026 +0100
+
+    Initialisation project

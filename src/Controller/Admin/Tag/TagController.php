@@ -20,7 +20,7 @@ final class TagController extends AbstractController
     ) {
     }
 
-    #[Route('tag/index', name: 'app_admin_tag_index', methods: ['GET'])]
+    #[Route('/tag/index', name: 'app_admin_tag_index', methods: ['GET'])]
     public function index(): Response
     {
         $tags = $this->TR->findAll();

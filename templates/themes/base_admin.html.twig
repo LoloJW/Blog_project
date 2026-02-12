@@ -6,10 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="{% block description %}{% endblock %}">
 		<meta name="author" content="Jean Du Pont">
-		<title>
-			{% block title %}{% endblock %}
-			. Le jugement divin s'abattra sur les tolls d'internet</title>
-		<meta name 'keywords' content='{% block keywords %}{% endblock %}'>
+		<title>{% block title %}{% endblock %}. Le jugement divin s'abattra sur les tolls d'internet</title>
+		{% block keywords %}{% endblock %}
 		<link
 		rel="canonical" href="https://cuisine-du-monde.com">
 
@@ -25,6 +23,8 @@
 		{% block j_query %}{% endblock %}
 
 		{% block data_tables %}{% endblock %}
+
+		{% block select2 %}{% endblock %}
 
 		{% block tiny_mce %}{% endblock %}
 
